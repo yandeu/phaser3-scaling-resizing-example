@@ -74,6 +74,7 @@ export default class MainScene extends Phaser.Scene {
       // @ts-ignore
       child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8))
       child.setInteractive().on('pointerdown', () => {
+        console.log('star body', child.body)
         console.log('you hit a star')
       })
     })
