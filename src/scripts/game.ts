@@ -12,9 +12,14 @@ let SCALE_MODE: scaleMode = 'SMOOTH' // FIT OR SMOOTH
 
 const config: GameConfig = {
   backgroundColor: '#ffffff',
+  // please check if the parent matched the id in your index.html file
   parent: 'phaser-game',
-  width: DEFAULT_WIDTH,
-  height: DEFAULT_HEIGHT,
+  scale: {
+    // we do scale the game manually in resize()
+    mode: Phaser.Scale.ScaleModes.NONE,
+    width: DEFAULT_WIDTH,
+    height: DEFAULT_HEIGHT
+  },
   scene: [PreloadScene, MainScene],
   physics: {
     default: 'arcade',
@@ -48,8 +53,8 @@ window.addEventListener('load', () => {
 
     // smooth scaling
     let smooth = 1
-    let maxSmoothScale = 1.15
     if (scaleMode === 'SMOOTH') {
+      const maxSmoothScale = 1.15
       const normalize = (value, min, max) => {
         return (value - min) / (max - min)
       }
@@ -72,10 +77,6 @@ window.addEventListener('load', () => {
     // center the game with css margin
     game.canvas.style.marginTop = `${(h - newHeight * scale) / 2}px`
     game.canvas.style.marginLeft = `${(w - newWidth * scale) / 2}px`
-
-    // adjust displaySize
-    // game.scale.displaySize.setWidth(newWidth)
-    // game.scale.displaySize.setHeight(newHeight)
   }
   window.addEventListener('resize', event => {
     resize()
