@@ -16,7 +16,7 @@ const config: GameConfig = {
   parent: 'phaser-game',
   scale: {
     // we do scale the game manually in resize()
-    mode: Phaser.Scale.ScaleModes.NONE,
+    mode: Phaser.Scale.NONE,
     width: DEFAULT_WIDTH,
     height: DEFAULT_HEIGHT
   },
