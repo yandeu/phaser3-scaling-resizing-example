@@ -55,7 +55,7 @@ window.addEventListener('load', () => {
     let smooth = 1
     if (scaleMode === 'SMOOTH') {
       const maxSmoothScale = 1.15
-      const normalize = (value, min, max) => {
+      const normalize = (value: number, min: number, max: number) => {
         return (value - min) / (max - min)
       }
       if (width / height < w / h) {
