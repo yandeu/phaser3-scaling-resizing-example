@@ -12,10 +12,10 @@ let SCALE_MODE: scaleMode = 'SMOOTH' // FIT OR SMOOTH
 
 const config: GameConfig = {
   backgroundColor: '#ffffff',
-  // please check if the parent matched the id in your index.html file
-  parent: 'phaser-game',
   scale: {
     // we do scale the game manually in resize()
+    // please check if the parent matched the id in your index.html file
+    parent: 'phaser-game',
     mode: Phaser.Scale.NONE,
     width: DEFAULT_WIDTH,
     height: DEFAULT_HEIGHT
